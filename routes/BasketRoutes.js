@@ -172,6 +172,7 @@ router.post("/", auth, async (req, res) => {
 });
 
 router.get("/", auth, async (req, res) => {
+  console.log("Getting data HELLO ID=",req.query,req.params);
   try {
     const baskets = await ProposalBasket.findAll({
       include: [
@@ -397,6 +398,7 @@ router.delete("/:id", auth, async (req, res) => {
 });
 
 router.get("/labels", auth, async (req, res) => {
+  console.log("Getting data HELLO ID=",req.query,req.params);
   try {
     const companyCars = await CompanyCarNumber.findAll({
       include: [
@@ -423,7 +425,7 @@ router.get("/labels", auth, async (req, res) => {
 
 router.get("/:id", auth, async (req, res) => {
   try {
-    console.log("HELLO ID");
+    console.log("Getting data HELLO ID=",req.query,req.params);
 
     const basket = await ProposalBasket.findOne({
       where: {

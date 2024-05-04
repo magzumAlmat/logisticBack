@@ -239,7 +239,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-router.patch("/:id", auth, async (req, res) => {
+router.put("/:id", auth, async (req, res) => {
   try {
     const normalized = normalizeValues(req.body);
 
